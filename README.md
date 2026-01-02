@@ -10,7 +10,7 @@ This repository contains a custom Fastfetch configuration optimized for Windows 
 
 ## 🚀 Instalação / Installation
 
-### Windows
+### Método 1: Script Automático / Automatic Script (Recomendado / Recommended)
 
 1. **Instalar o Fastfetch / Install Fastfetch:**
    
@@ -29,9 +29,26 @@ This repository contains a custom Fastfetch configuration optimized for Windows 
 2. **Clonar este repositório / Clone this repository:**
    ```powershell
    git clone https://github.com/QuittoGames/.fastfetch.git
+   cd .fastfetch
    ```
 
-3. **Copiar o arquivo de configuração / Copy the configuration file:**
+3. **Executar o script de instalação / Run the installation script:**
+   
+   Para PowerShell / For PowerShell:
+   ```powershell
+   .\install-windows.ps1
+   ```
+   
+   Para Command Prompt / For Command Prompt:
+   ```cmd
+   install-windows.bat
+   ```
+
+### Método 2: Instalação Manual / Manual Installation
+
+1. Instale o Fastfetch (veja acima)
+2. Clone o repositório
+3. Copie o arquivo de configuração manualmente:
    
    Para PowerShell / For PowerShell:
    ```powershell
@@ -90,6 +107,18 @@ Esta configuração inclui / This configuration includes:
 - ✅ Bateria (para laptops)
 - ✅ Esquema de cores personalizável
 - ✅ Paleta de cores no final
+- ✅ Três variantes de configuração (padrão, minimalista, Windows 11)
+- ✅ Scripts de instalação automática (PowerShell e Batch)
+
+### Configurações Disponíveis / Available Configurations
+
+Este repositório inclui três configurações diferentes:
+
+- **config.jsonc** - Configuração completa com todos os módulos
+- **config-minimal.jsonc** - Versão simplificada com informações essenciais
+- **config-win11.jsonc** - Tema moderno do Windows 11 com ícones Nerd Font
+
+Para mais detalhes sobre cada configuração, veja [CONFIGURATIONS.md](CONFIGURATIONS.md).
 
 ## 🤝 Contribuindo / Contributing
 
