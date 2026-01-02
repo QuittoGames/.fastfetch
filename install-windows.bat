@@ -51,15 +51,26 @@ if exist "%SOURCE_CONFIG%" (
     
     REM Backup da configuração existente / Backup existing configuration
     if exist "%DEST_CONFIG%" (
-        for /f "tokens=2-4 delims=/ " %%a in ('date /t') do set DATE=%%c%%b%%a
-        for /f "tokens=1-2 delims=: " %%a in ('time /t') do set TIME=%%a%%b
-        set BACKUP_PATH=%DEST_CONFIG%.backup-!DATE!-!TIME!
-        copy "%DEST_CONFIG%" "!BACKUP_PATH!" >nul
-        echo [WARNING] Backup da configuracao antiga criado: !BACKUP_PATH!
+        REM Use timestamp that works across locales
+        for /f "tokens=1-3 delims=/: " %%a in ('echo %date% %time%') do (
+            set TIMESTAMP=%%a%%b%%c-%%d%%e%%f
+        )
+        set BACKUP_PATH=%DEST_CONFIG%.backup-!TIMESTAMP!
+        copy "%DEST_CONFIG%" "!BACKUP_PATH!" >nul 2>&1
+        if !errorlevel! equ 0 (
+            echo [WARNING] Backup da configuracao antiga criado: !BACKUP_PATH!
+        ) else (
+            echo [WARNING] Nao foi possivel criar backup. Continuando...
+        )
     )
     
-    copy "%SOURCE_CONFIG%" "%DEST_CONFIG%" >nul
-    echo [OK] Configuracao instalada com sucesso!
+    copy "%SOURCE_CONFIG%" "%DEST_CONFIG%" >nul 2>&1
+    if !errorlevel! equ 0 (
+        echo [OK] Configuracao instalada com sucesso!
+    ) else (
+        echo [ERROR] Falha ao copiar configuracao!
+        exit /b 1
+    )
 ) else (
     echo [ERROR] Arquivo config.jsonc nao encontrado!
     echo        Certifique-se de executar este script no diretorio do repositorio.
