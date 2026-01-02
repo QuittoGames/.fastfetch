@@ -195,6 +195,10 @@
       "type": "custom",
       "format": "\u001b[96m\"Aquele que habita no esconderijo do Altíssimo\" \u001b[90m- Salmos 91:1"
     },
+    {
+      "type": "custom",
+      "format": "\u001b[96m\"Mil cairão ao teu lado, e dez mil à tua direita; mas tu não serás atingido\" \u001b[90m- Salmos 91:7"
+    },
     "break"
   ]
 }

@@ -1,1 +1,3 @@
-# .fastfetch
+# fastfetch
+
+<img src="image.png">
