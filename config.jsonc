@@ -1,0 +1,200 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "Windows11",
+    "padding": {
+      "top": 3
+      ,
+      "left": 3,
+      "right": 3
+    }
+  },
+  "display": {
+    "separator": " -> ",
+    "color": {
+      "separator": "blue"
+    }
+  },
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "color": {
+        "at": "blue"
+      }
+    },
+    {
+      "type": "separator",
+      "outputColor": "blue"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "{#keys}{#1}{#cyan}⊞ System"
+    },
+    {
+      "type": "os",
+      "key": "├ OS     ",
+      "keyColor": "cyan",
+      "format": "{pretty-name} {version}"
+    },
+    {
+      "type": "kernel",
+      "key": "├ Kernel ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "uptime",
+      "key": "├ Uptime ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "packages",
+      "key": "├ Packages",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "shell",
+      "key": "├ Shell  ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "terminal",
+      "key": "└ Terminal",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "custom",
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "{#keys}{#1}{#blue}⚙  Interface"
+    },
+    {
+      "type": "de",
+      "key": "├ DE     ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "wm",
+      "key": "├ WM     ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "theme",
+      "key": "├ Theme  ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "icons",
+      "key": "├ Icons  ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "font",
+      "key": "└ Font   ",
+      "keyColor": "blue"
+    },
+    {
+      "type": "custom",
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "{#keys}{#1}{#cyan}모 Hardware"
+    },
+    {
+      "type": "host",
+      "key": "├ Model  ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "cpu",
+      "key": "├ CPU    ",
+      "keyColor": "cyan",
+      "temp": true
+    },
+    {
+      "type": "gpu",
+      "key": "├ GPU    ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "memory",
+      "key": "├ Memory ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "disk",
+      "key": "├ Disk   ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "display",
+      "key": "├ Display",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "battery",
+      "key": "└ Battery",
+      "keyColor": "cyan",
+      "temp": true
+    },
+    {
+      "type": "custom",
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "{#keys}{#1}{#magenta}ᯤ Network"
+    },
+    {
+      "type": "localip",
+      "key": "├ Local IP",
+      "keyColor": "magenta",
+      "format": "{ipv4}"
+    },
+    {
+      "type": "publicip",
+      "key": "├ Public IP",
+      "keyColor": "magenta",
+      "timeout": 3000
+    },
+    {
+      "type": "wifi",
+      "key": "└ Wi-Fi  ",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "custom",
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "{#keys}{#1}{#green}♫ Media"
+    },
+    {
+      "type": "media",
+      "key": "├ Playing",
+      "keyColor": "green",
+      "format": "{title} - {artist}"
+    },
+    {
+      "type": "player",
+      "key": "└ Player ",
+      "keyColor": "green"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[96m\"Aquele que habita no esconderijo do Altíssimo\" \u001b[90m- Salmos 91:1"
+    },
+    "break"
+  ]
+}
