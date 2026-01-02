@@ -87,7 +87,7 @@
       "type": "disk",
       "key": " ",
       "keyColor": "36",
-      "folders": "C:"
+      "folder": "C:"
     },
     {
       "type": "battery",

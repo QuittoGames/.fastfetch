@@ -51,11 +51,14 @@ if exist "%SOURCE_CONFIG%" (
     
     REM Backup da configuração existente / Backup existing configuration
     if exist "%DEST_CONFIG%" (
-        REM Use timestamp that works across locales
-        for /f "tokens=1-3 delims=/: " %%a in ('echo %date% %time%') do (
-            set TIMESTAMP=%%a%%b%%c-%%d%%e%%f
+        REM Use a simple sequential backup method that works across all locales
+        set BACKUP_NUM=1
+        :find_backup_name
+        set BACKUP_PATH=%DEST_CONFIG%.backup-!BACKUP_NUM!
+        if exist "!BACKUP_PATH!" (
+            set /a BACKUP_NUM+=1
+            goto find_backup_name
         )
-        set BACKUP_PATH=%DEST_CONFIG%.backup-!TIMESTAMP!
         copy "%DEST_CONFIG%" "!BACKUP_PATH!" >nul 2>&1
         if !errorlevel! equ 0 (
             echo [WARNING] Backup da configuracao antiga criado: !BACKUP_PATH!
